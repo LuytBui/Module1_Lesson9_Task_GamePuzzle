@@ -1,0 +1,1 @@
+Đọc các file "./vesion/version-log*.txt"

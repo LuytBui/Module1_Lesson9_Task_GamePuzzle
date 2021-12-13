@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Puzzle</title>
+    <style>
+
+        .photoContainer {
+            text-align: center;
+            font-size: 2rem;
+            width: 300px;
+            height: 80px;
+            border: 1px solid black;
+        }
+        pre{
+            text-align: left;
+            font-size:1.3rem;
+        }
+    </style>
+
+</head>
+<body>
+<!--tham khảo http://demo.codegym.vn/8/puzzlegame/index.html-->
+<table>
+    <tr>
+        <td rowspan="5">
+            <div>
+                <div class="photoContainer"><p id="photoContainer0">0</p></div>
+                <div class="photoContainer"><p id="photoContainer1">1</p></div>
+                <div class="photoContainer"><p id="photoContainer2">2</p></div>
+                <div class="photoContainer"><p id="photoContainer3">3</p></div>
+                <div class="photoContainer"><p id="photoContainer4">4</p></div>
+            </div>
+        </td>
+        <td>
+            <div>
+                <pre id="monitor">
+    Tạo dãy 0, 1, 2, 3, 4 để chiến thắng.
+    Ấn vào từng chữ số để thay đổi chữ số đó
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<br>
+<p>Puzzle game - version 0.1.0 - Release on 2021.12.13</p>
+
+<script src="gamePuzzle.js"></script>
+</body>
+</html>

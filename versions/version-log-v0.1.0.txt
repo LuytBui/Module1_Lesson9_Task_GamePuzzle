@@ -1,0 +1,38 @@
+1. Giới thiệu
+    Ứng dụng là bài tập của Module 1, Lesson 9
+    Link đề bài: https://james.codegym.vn/mod/assign/view.php?id=5822
+
+Mô tả: Hãy phát triển một game nhỏ, có tên là Puzzle với các hiệu ứng được mô tả như sau:
+       Ứng dụng bao gồm các ô ảnh cho sẵn
+       Khi click vào một ảnh thì chuyển sang một ảnh khác
+       Nếu tất cả các ảnh ghép thành một bức tranh hoàn thiện thì có hiệu ứng thông báo.
+       Tham khảo: http://demo.codegym.vn/8/puzzlegame/index.html
+
+2. Quá trình phát triển
+2.a. Các phiên bản trước
+    Không có
+
+2.b. Phiên bản hiện tại
+    Tên phiên bản: version 0.1.0; hoàn thành ngày 13/12/2021
+    Mô tả:
+       * Là phiên bản đầu tiên, tập trung vào xây dựng bộ khung và logic của chương trình
+    Khung chương trình:
+        + Xây dựng các đối tượng HTML photoContainers (ô chứa) để chứa các ảnh
+        + Hàm flip() : chạy khi các ô chứa được click vào, sửa hình ảnh của ô đấy bằng
+                hình ảnh ngẫu nhiên khác (random số học)
+        + Hàm fillContainer(containerIndex) : cập nhật hình ảnh cho 01 ô chứa containerIndex
+        + Hàm updatePhotoContainers() cập nhật toàn bộ ô chứa, kiểm tra điều kiện thắng
+        + Hàm checkWin() didWin() applause() : kiểm tra điều kiện thắng
+
+       * Đơn giản hóa giao diện của game bằng cách:
+        Thay thế việc hiển thị các ảnh (theo yêu cầu đề bài) bằng việc hiển thị giá trị
+            số (0, 1, 2, 3, 4) lên các thẻ <p> nằm trong các photoContainers
+       * Khi ấn vào các chữ số này thì chúng sẽ thay đổi
+       * Điều kiện chiến thắng: Hoàn thành chuỗi từ 0 đến 4 theo chiều từ trên xuống
+
+    Các lỗi đã phát hiện: Chưa có
+
+2.c. Kế hoạch các thay đổi trong phiên bản tiếp theo
+        Cập nhật các thay đổi để về gần với yêu cầu của đề ra như giao diện người dùng,
+        điều kiện chiến thắng.
+
