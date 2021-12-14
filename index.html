@@ -5,47 +5,61 @@
     <title>Game Puzzle</title>
     <style>
 
-        .photoContainer {
-            text-align: center;
-            font-size: 2rem;
-            width: 300px;
-            height: 80px;
-            border: 1px solid black;
-        }
-        pre{
+        pre {
             text-align: left;
-            font-size:1.3rem;
+            font-size: 1.3rem;
+        }
+
+        img {
+            width: 300px;
         }
     </style>
 
 </head>
 <body>
 <!--tham khảo http://demo.codegym.vn/8/puzzlegame/index.html-->
-<table>
-    <tr>
-        <td rowspan="5">
-            <div>
-                <div class="photoContainer"><p id="photoContainer0">0</p></div>
-                <div class="photoContainer"><p id="photoContainer1">1</p></div>
-                <div class="photoContainer"><p id="photoContainer2">2</p></div>
-                <div class="photoContainer"><p id="photoContainer3">3</p></div>
-                <div class="photoContainer"><p id="photoContainer4">4</p></div>
-            </div>
-        </td>
-        <td>
-            <div>
-                <pre id="monitor">
-    Tạo dãy 0, 1, 2, 3, 4 để chiến thắng.
-    Ấn vào từng chữ số để thay đổi chữ số đó
-                </pre>
-            </div>
-        </td>
-    </tr>
-</table>
 
-<br>
-<p>Puzzle game - version 0.1.0 - Release on 2021.12.13</p>
+<div>
+    <img src="" alt="1" id="image1" onclick="changeImage(1)"> <br>
+    <img src="" alt="2" id="image2" onclick="changeImage(2)"> <br>
+    <img src="" alt="3" id="image3" onclick="changeImage(3)"> <br>
+    <img src="" alt="4" id="image4" onclick="changeImage(4)"> <br>
+    <img src="" alt="5" id="image5" onclick="changeImage(5)"> <br>
+</div>
 
-<script src="gamePuzzle.js"></script>
+<script>
+    let imgSrcs = [
+        ['/img/funny-cat1_part1x1.jpg', '/img/monkey_part1x1.jpg', '/img/panda_swap_part1x1.jpg'],
+        ['/img/funny-cat1_part2x1.jpg', '/img/monkey_part2x1.jpg', '/img/panda_swap_part2x1.jpg'],
+        ['/img/funny-cat1_part3x1.jpg', '/img/monkey_part3x1.jpg', '/img/panda_swap_part3x1.jpg'],
+        ['/img/funny-cat1_part4x1.jpg', '/img/monkey_part4x1.jpg', '/img/panda_swap_part4x1.jpg'],
+        ['/img/funny-cat1_part5x1.jpg', '/img/monkey_part5x1.jpg', '/img/panda_swap_part5x1.jpg'],
+    ];
+    console.log(imgSrcs);
+    let indexes = [1, 2, 0, 0, 1];
+    for (let i = 1; i <= 5; i++) {
+        let imgID = 'image' + i;
+        let image = document.getElementById(imgID);
+        image.src = imgSrcs[i - 1][indexes[i - 1]];
+    }
+
+    function changeImage(nth) {
+        let imgID = 'image' + nth;
+        let image = document.getElementById(imgID);
+        indexes[nth - 1]++;
+        if (indexes[nth - 1] === 3) {
+            indexes[nth - 1] = 0;
+        }
+        image.src = imgSrcs[nth - 1][indexes[nth - 1]];
+        checkWin();
+    }
+
+    function checkWin() {
+        if (indexes[0] === indexes[1] && indexes[1] === indexes[2]
+            && indexes[2] === indexes[3] && indexes[3] === indexes[4]) {
+            alert('Bạn đã thắng');
+        }
+    }
+</script>
 </body>
 </html>
